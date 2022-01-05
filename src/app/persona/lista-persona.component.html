@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h3>Personas</h3>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead>
+                  <tr class="text-center">
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Editar</th>
+                    <th>Eliminar</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let persona of Personas" class="text-center">
+                    <td>{{persona.nombre}}</td>
+                    <td>{{persona.edad}}</td>
+                    <td><button class="btn btn-outline-warning" routerLink="/Editar/{{persona.id}}"><i class="far fa-edit"></i> Editar</button></td>
+                    <td><button class="btn btn-outline-danger" (click)="borrar(persona.id)"><i class="far fa-trash-alt"></i> Eliminar</button></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
